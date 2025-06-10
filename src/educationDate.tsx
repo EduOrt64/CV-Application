@@ -9,6 +9,7 @@ type EducationCalProps = {
   calLabel: string;
   inputValue: string;
   setInputValue: (value: string) => void;
+ 
 };
 
 export function EducationCal({calLabel, inputValue, setInputValue} : EducationCalProps) {
