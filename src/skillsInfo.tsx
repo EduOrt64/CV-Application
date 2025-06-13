@@ -38,7 +38,7 @@ const [input, setInput] = useState('');
             key={index}
             className="bg-accent text-blue-800 px-3 py-1 rounded-full flex items-center gap-1"
           >
-            {skill}
+            {skill || "Salesforce"}
             <button
               onClick={() => removeSkill(index)}
               className="text-blue-600 hover:text-blue-800 font-bold"

@@ -1,5 +1,10 @@
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 export type InputProps = React.InputHTMLAttributes<HTMLInputElement>;
+import { PDFDownloadLink } from '@react-pdf/renderer';
+import { MyCVPDF } from './cvPdf';
+import type { CvPDFProps } from './cvPdf';
+
+type DownloadPdfButtonProps = CvPDFProps;
 
 export function Button({
   children,
@@ -32,3 +37,15 @@ return (
 )
 
 }
+export const DownloadPdfButton = ({ data }: DownloadPdfButtonProps) => (
+<PDFDownloadLink
+  document={<MyCVPDF data={data} />}
+  fileName="my-cv.pdf"
+>
+  {({ loading }) => (
+    <button className="btn btn-neutral">
+      {loading ? 'Preparing...' : 'Download CV'}
+    </button>
+  )}
+</PDFDownloadLink>
+);
