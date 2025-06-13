@@ -1,22 +1,21 @@
-
 import { useId, useState } from "react";
 import { format, isValid, parse } from "date-fns";
 import { DayPicker } from "react-day-picker";
-
-
 
 type EducationCalProps = {
   calLabel: string;
   inputValue: string;
   setInputValue: (value: string) => void;
- 
 };
 
-export function EducationCal({calLabel, inputValue, setInputValue} : EducationCalProps) {
+export function EducationCal({
+  calLabel,
+  inputValue,
+  setInputValue,
+}: EducationCalProps) {
   const inputId = useId();
   const [month, setMonth] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
-
 
   const handleDayPickerSelect = (date: Date | undefined) => {
     if (!date) {

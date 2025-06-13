@@ -1,22 +1,20 @@
-import { useState } from 'react';
-import { Input } from './components';
+import { useState } from "react";
+import { Input } from "./components";
 
 interface SkillsInputProps {
   skills: string[];
   setSkills: (skills: string[]) => void;
 }
 
-
-export function SkillInfo({ skills, setSkills }: SkillsInputProps){
-const [input, setInput] = useState('');
-
+export function SkillInfo({ skills, setSkills }: SkillsInputProps) {
+  const [input, setInput] = useState("");
 
   const addSkill = () => {
     const trimmed = input.trim();
     if (trimmed && !skills.includes(trimmed)) {
       setSkills([...skills, trimmed]);
     }
-    setInput('');
+    setInput("");
   };
 
   const removeSkill = (index: number) => {
@@ -24,13 +22,13 @@ const [input, setInput] = useState('');
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       e.preventDefault();
       addSkill();
     }
   };
 
- return (
+  return (
     <div>
       <div className="flex flex-wrap gap-2 mb-2">
         {skills.map((skill, index) => (
@@ -57,13 +55,10 @@ const [input, setInput] = useState('');
           className="input input-secondary input-sm"
           placeholder="Type a skill and press Enter"
         />
-        <button
-          onClick={addSkill}
-          className="btn btn-ghost"
-        >
+        <button onClick={addSkill} className="btn btn-ghost">
           Add
         </button>
       </div>
     </div>
-  );    
+  );
 }

@@ -22,18 +22,20 @@ export function CVUI() {
     <div className=" text-center ">
       <div className="navbar bg-base-200 shadow-sm flex flex-row justify-around">
         <div className="w-xs"></div>
-        <p >Start building your curriculum here 🚀</p>
-   <DownloadPdfButton   data={{
-    name,
-    email,
-    phone,
-    school,
-    educationStartDate: startDate,
-    educationEndDate: endDate,
-    title: univTitle,
-    skills,
-    company
-  }} />
+        <p>Start building your curriculum here 🚀</p>
+        <DownloadPdfButton
+          data={{
+            name,
+            email,
+            phone,
+            school,
+            educationStartDate: startDate,
+            educationEndDate: endDate,
+            title: univTitle,
+            skills,
+            company,
+          }}
+        />
       </div>
 
       <div className="flex flex-col sm:flex-row justify-around mt-4 ">
@@ -84,9 +86,7 @@ export function CVUI() {
         </div>
 
         <div>
-          <div className="p-4">
- 
-</div>
+          <div className="p-4"></div>
           <CvTemplate
             name={name}
             email={email}

@@ -21,7 +21,7 @@ export function EducationInfo({
   endDate,
   setEndDate,
   title,
-  setUnivTitle
+  setUnivTitle,
 }: EducationProps) {
   return (
     <div className="flex flex-row gap-10 mt-6 ">
@@ -54,7 +54,7 @@ export function EducationInfo({
             setInputValue={setEndDate}
           />
 
-           <label className="floating-label">
+          <label className="floating-label">
             <Input
               type="text"
               placeholder="Professional Title"
